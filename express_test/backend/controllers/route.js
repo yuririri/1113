@@ -17,6 +17,10 @@ module.exports = (app) => {
 	  res.render('examples/many/index.ejs', {
 		  title : "- 일대다 화상수업"
 	  });
-  })
+  })/*.get('/chat', (req, res) => {
+	  res.render('examples/chat/index.html', {
+		  title : "- chat"
+	  });
+  });*/
 };
 

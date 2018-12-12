@@ -6,8 +6,7 @@ body, p { margin: 0; padding: 0; font-size: 16px; line-height: 1.4; }
 
 body{
 	padding: 16px;
-	
- background-attachment: fixed;
+ 	background-attachment: fixed;
     background-image: url(https://66.media.tumblr.com/f277eef87643389730353459d89670e0/tumblr_nm99syGwii1tf8vylo1_1280.png);
     display: block;
     position: absolute;
@@ -60,23 +59,23 @@ code {
 }
 .btn:hover { background: #000; color: #fff; }
 
-button {
+ button {
 	margin: 0 0 1em 0;
 	padding: 0.4em 0.7em 0.5em 0.7em;
 	min-width: 100px;
-	background-color: /* #d84a38; */ /* #ffdddd; */ #f06292;
+	background-color: #d84a38; #ffdddd; #f06292;
 	border: none;
 	border-radius: 2px;
 	color: white;
 	font-family: 'Roboto', sans-serif;
 	font-size: 1em;
   cursor: pointer;
-}
+} 
 
-button:active { background-color: /* #cf402f; */ #f06292}
-button:hover { background-color: /* #cf402f; */ #f06292}
+button:active { background-color: #cf402f; #f06292}
+button:hover { background-color: #cf402f; #f06292}
 button[disabled] { color: #ccc; }
-button[disabled]:hover { background-color: #d84a38; }
+button[disabled]:hover { background-color: #d84a38; } 
 video { margin: 0 0 20px 0; width: 100%; background: #222; }
 canvas { margin-bottom: 20px; }
 .not-yet * { color: #bbb; }
