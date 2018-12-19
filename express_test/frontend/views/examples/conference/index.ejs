@@ -2,10 +2,8 @@
 <meta charset="utf-8">
 <link href="css/main.css" rel="stylesheet" type="text/css">
 
-<div id="content">
-  <div class="wrap">
-<!--     <section id="share-wrap">
-    </section> -->
+    <div id="content">  
+   <div class="wrap">  
 
     <section id="enter-wrap">
       <div id="create-wrap">
@@ -16,19 +14,68 @@
     </section>
 
     <section id="video-wrap">
-		<div class="buttons"> 
-	      	<!-- <a href="#" id="unique-token">링크 공유하기</a> -->
-	      	<button id="unique-token">링크 공유</button>
+        <div class="buttons"> 
+	      	<button id="unique-token" onclick="window.location.reload()">링크 공유</button>
+	      	<button onclick="$.toggleFS(this);">전체화면</button>
 	        <button id="btn-camera">카메라 OFF</button>
 	        <button id="btn-mic">마이크 OFF</button>
 	        <button id="btn-back" onclick="history.back(-1);">종료</button>
-      	</div> 
-    </section>
-  </div>
-</div>
+      	</div>
+    </section> 
+      </div>  
+  </div>    
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
 <script src="js/modules/peer-handler.js"></script>
 <script src="js/modules/media-handler.js"></script>
 <script src="js/main.js"></script>
+
+ <script>
+$(document).ready(function(){
+$.is_fs = false;
+$.requestFullScreen = function(calr)
+{
+    var element = document.body;
+
+    // Supports most browsers and their versions.
+    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+
+    if (requestMethod) { // Native full screen.
+        requestMethod.call(element);
+    } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+        var wscript = new ActiveXObject("WScript.Shell");
+        if (wscript !== null) {
+            wscript.SendKeys("{F11}");
+        }
+    }
+
+    $.is_fs = true;    
+    $(calr).val('Exit Full Screen');
+}
+
+$.cancel_fs = function(calr)
+{
+    var element = document; //and NOT document.body!!
+    var requestMethod = element.exitFullScreen || element.mozCancelFullScreen || element.webkitExitFullScreen || element.mozExitFullScreen || element.msExitFullScreen || element.webkitCancelFullScreen;
+
+    if (requestMethod) { // Native full screen.
+    requestMethod.call(element);
+    } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+        var wscript = new ActiveXObject("WScript.Shell");
+        if (wscript !== null) {
+            wscript.SendKeys("{F11}");
+        }
+    }    
+
+    $(calr).val('Full Screen');    
+    $.is_fs = false;
+}
+
+$.toggleFS = function(calr)
+{    
+    $.is_fs == true? $.cancel_fs(calr):$.requestFullScreen(calr);
+}
+
+});
+   </script>

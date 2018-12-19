@@ -1,13 +1,14 @@
 @charset "utf-8";
-
-/* #btn-camera {
-	background: url("photo-camera.png") no-repeat;
-	border: none;
- 	width:50px;
-	height:30px;
-	cursor:pointer;
-} */
-
+/*!
+ *
+ * WebRTC Lab
+ * @author dodortus (dodortus@gmail.com / codejs.co.kr)
+ *
+ */
+ 
+ #enter-wrap {
+	margin : 100px;
+ }
 input[type="text"] {
   padding: 6px 10px;
   width: 120px;
@@ -17,7 +18,7 @@ input[type="text"] {
 }
 
 .wrap {
-  margin-top: 30px;
+  margin-top: 0;
   position: relative;
   font-size: 1.2em;
   text-align: center;
@@ -27,11 +28,11 @@ input[type="text"] {
   font-size: 1.25em;
 }
 
- .wrap button {
-  margin-top: 20px;
+.wrap button {
+  margin-top: 0;
   min-width: 80px;
   vertical-align: top;
-} 
+}
 
 .room-info {
   vertical-align: top;
@@ -42,49 +43,53 @@ input[type="text"] {
   Below room style
 *********************************************/
 video {
-  margin: 0 0 20px 0;
+   margin: 0 0 0 0;
   width: 100%;
-  z-index: 1;
+  z-index: -1;
   background: #222;
   border: solid 1px #fff;
-  transition: all .6s ease-out;
-  /* height:100%; */
+ 
 }
 
 video.effect {
-  transform: scale(1, 1);
+
 }
 
 #video-wrap {
   display: none;
   position: relative;
-  margin: 0 auto;
-  min-height: 620px;
+  margin: 0;
+  min-height: 657px;
+  
+  
 }
 
 #video-wrap .buttons {
   position: absolute;
-  bottom: 0;
+  top: 10px;
+  right :10px;
+  
 }
 
 #local {
   position: absolute;
-  top: 4%;
-  right: 2%;
+  
+  
   width: 340px;
-  height: 220px;
+  
   border: solid 1px #fff;
 }
 
-#local-video {
+#local-video { 
   position: absolute;
   top: 0;
   left: 0;
+  
 }
 
-#share-wrap {
+#share-wrap { 
   display: none;
-  margin: 10px 0;
+  margin: 0;
 }
 
 .room #enter-wrap,
@@ -92,10 +97,10 @@ video.effect {
 .connected #wait-wrap {
   display: none;
 }
-.connected #local-video {
-  top: 2px;
+.connected #local-video { 
+  
   left: 2px !important;
-  width: 150px !important;
+  width: 300px !important;
   border: solid 1px #fff;
   z-index: 2;
 }
@@ -111,7 +116,56 @@ video.effect {
 .room #video-wrap {
   display: block;
 }
-
-.room #content {
-  padding-top: 30px;
+.room #overflow-hidden {
+   display: block;
 }
+.room #content {
+  
+}
+
+        .overflow-hidden {
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        #div-chat-display-parent {
+            height: 400px;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            margin : 0px;
+        }
+        #div-chat-display {
+            height: 400px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            margin : 0px -20px 0px 0px ;
+        }
+
+        .alert {
+            display: inline-block;
+            margin : 5px;
+        }
+        .bg-warning  {
+            display: inline-block;
+            margin: 2px;
+            padding: 2px 10px 2px 10px;
+        }
+        .bg-success {
+            display: inline-block;
+            margin: 2px;
+            padding: 2px 10px 2px 10px;
+        }
+        .bg-info {
+            display: inline-block;
+            margin : 2px;
+            padding: 2px 10px 2px 10px;
+        }
+        .text-center {
+            text-align:center;
+        }
+        .content-left-line {
+            border-left : 1px dashed #eeeeee;
+            height: 400px;
+        }
+        .content-under-line {
+            border-bottom : 1px dashed #eeeeee;
+        }
